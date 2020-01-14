@@ -31,8 +31,6 @@ import matplotlib.gridspec as gridspec
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from matplotlib import ticker
 
-from fortran import NumBAT
-
 try: 
     plt.style.use('NumBATstyle')
 except (ValueError, IOError, AttributeError): print("Preferred matplotlib style file not found.")
