@@ -129,11 +129,12 @@ threshold = -1e-3
 masked_PE = np.ma.masked_inside(SBS_gain_PE[EM_ival_pump,EM_ival_Stokes,:], 0, threshold)
 masked_MB = np.ma.masked_inside(SBS_gain_MB[EM_ival_pump,EM_ival_Stokes,:], 0, threshold)
 masked = np.ma.masked_inside(SBS_gain[EM_ival_pump,EM_ival_Stokes,:], 0, threshold)
+linewidth2=(alpha/2)/3.14
 print("\n SBS_gain PE contribution \n", masked_PE)
 print("SBS_gain MB contribution \n", masked_MB)
 print("SBS_gain total \n", masked)
 print("SBS_gain linewidth [Hz] \n", linewidth_Hz)
-print("alpha [Hz] \n", alpha )
+print("alpha [Hz] \n", linewidth2 )
 
 # Construct the SBS gain spectrum, built from Lorentzian peaks of the individual modes.
 freq_min = 7.2  # GHz
