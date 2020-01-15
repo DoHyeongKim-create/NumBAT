@@ -34,7 +34,7 @@ unitcell_y = 0.75*unitcell_x
 inc_a_x = 2700
 inc_a_y = 1300
 # Shape of the waveguide.
-inc_shape = 'trapezoidal'
+inc_shape = 'rib'
 
 slab_a_x = 7200
 slab_a_y = 1300
