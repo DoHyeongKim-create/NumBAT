@@ -121,7 +121,8 @@ print("\n SBS_gain PE contribution \n", masked_PE)
 print("SBS_gain MB contribution \n", masked_MB)
 print("SBS_gain total \n", masked)
 print("SBS_gain linewidth [Hz] \n", linewidth_Hz)
-
+linewidth2=(alpha/2)/3.1416
+print("alpha/(2*pi) [Hz] \n", linewidth2)
 end = time.time()
 print("\n Simulation time (sec.)", (end - start))
 
