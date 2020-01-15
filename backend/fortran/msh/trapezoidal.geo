@@ -6,7 +6,7 @@ dy= 0.5;
 slab_w = 0.72;
 slab_h = 0.13;
 rib_w= 0.27;
-rib_h=0.13;
+rib_h= 0.13;
 
 lc = 0; // background and unitcell edge
 lc2 = lc/1; // rib
