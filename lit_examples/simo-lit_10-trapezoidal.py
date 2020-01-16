@@ -28,7 +28,7 @@ start = time.time()
 # Geometric Parameters - all in nm.
 wl_nm = 1550 # Wavelength of EM wave in vacuum.
 # Unit cell must be large to ensure fields are zero at boundary.
-unitcell_x = 6*wl_nm
+unitcell_x = 12*wl_nm
 unitcell_y = 0.75*unitcell_x
 # Waveguide widths.
 inc_a_x = 2700
@@ -43,7 +43,7 @@ slab_a_y = 1300
 num_modes_EM_pump = 20
 num_modes_EM_Stokes = num_modes_EM_pump
 # Number of acoustic modes to solve for.
-num_modes_AC = 50
+num_modes_AC = 200
 # The EM pump mode(s) for which to calculate interaction with AC modes.
 # Can specify a mode number (zero has lowest propagation constant) or 'All'.
 EM_ival_pump = 0
@@ -119,23 +119,7 @@ SBS_gain, SBS_gain_PE, SBS_gain_MB, linewidth_Hz, Q_factors, alpha = integration
 print("\n SBS_gain PE contribution \n", SBS_gain_PE[EM_ival_pump,EM_ival_Stokes,:])
 print("SBS_gain MB contribution \n", SBS_gain_MB[EM_ival_pump,EM_ival_Stokes,:])
 print("SBS_gain total \n", SBS_gain[EM_ival_pump,EM_ival_Stokes,:])
-# Mask negligible gain values to improve clarity of print out.
-threshold = -1e-3
-masked_PE = np.ma.masked_inside(SBS_gain_PE[EM_ival_pump,EM_ival_Stokes,:], 0, threshold)
-masked_MB = np.ma.masked_inside(SBS_gain_MB[EM_ival_pump,EM_ival_Stokes,:], 0, threshold)
-masked = np.ma.masked_inside(SBS_gain[EM_ival_pump,EM_ival_Stokes,:], 0, threshold)
-print("\n SBS_gain PE contribution \n", masked_PE)
-print("SBS_gain MB contribution \n", masked_MB)
-print("SBS_gain total \n", masked)
-print("SBS_gain MB contribution \n", masked_MB)
 print("SBS_gain linewidth [Hz] \n", linewidth_Hz/2)
-
-# Construct the SBS gain spectrum, built from Lorentzian peaks of the individual modes.
-freq_min = 7.2  # GHz
-freq_max = 8.1  # GHz
-plotting.gain_spectra(sim_AC, SBS_gain, SBS_gain_PE, SBS_gain_MB, linewidth_Hz, k_AC,
-    EM_ival_pump, EM_ival_Stokes, AC_ival, freq_min=freq_min, freq_max=freq_max,
-    prefix_str=prefix_str, pdf_png='png')
 
 end = time.time()
 print("\n Simulation time (sec.)", (end - start))
