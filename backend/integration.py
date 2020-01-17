@@ -204,7 +204,7 @@ def gain_and_qs(sim_EM_pump, sim_EM_Stokes, sim_AC, k_AC,
         alpha = 0.5*(sim_AC.Omega_AC/fixed_Q)*np.ones(num_modes_AC) # appropriate for alpha in [1/s]
         Q_factors = fixed_Q*np.ones(num_modes_AC)
 
-    linewidth_Hz = alpha/np.pi # SBS linewidth of each resonance in [Hz]
+    linewidth_Hz = alpha/np.pi/2 # SBS linewidth of each resonance in [Hz]
 
     # Calc Q_photoelastic Eq. 33
     print("Photoelastic calc")
