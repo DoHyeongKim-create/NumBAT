@@ -116,7 +116,7 @@ SBS_gain, SBS_gain_PE, SBS_gain_MB, linewidth_Hz, Q_factors, alpha = integration
 print("\n SBS_gain PE contribution \n", SBS_gain_PE[EM_ival_pump,EM_ival_Stokes,:])
 print("SBS_gain MB contribution \n", SBS_gain_MB[EM_ival_pump,EM_ival_Stokes,:])
 print("SBS_gain total \n", SBS_gain[EM_ival_pump,EM_ival_Stokes,:])
-print("SBS_gain linewidth [Hz] \n", linewidth_Hz/2)
+print("SBS_gain linewidth [Hz] \n", linewidth_Hz)
 
 # Construct the SBS gain spectrum, built from Lorentzian peaks of the individual modes.
 freq_min = 7.2  # GHz
