@@ -18,7 +18,7 @@ lc = 0; // background and unitcell edge
 lc2 = lc/1; // rib
 lc3 = lc/1; // slab
 
-hy = dy/2 + (slab_h/2) + radius1y; // 
+hy = dy/2 + slab_h; // 
 hx = 0.;
 
 
