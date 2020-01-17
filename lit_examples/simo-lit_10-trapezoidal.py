@@ -121,5 +121,12 @@ print("SBS_gain MB contribution \n", SBS_gain_MB[EM_ival_pump,EM_ival_Stokes,:])
 print("SBS_gain total \n", SBS_gain[EM_ival_pump,EM_ival_Stokes,:])
 print("SBS_gain linewidth [Hz] \n", linewidth_Hz/2)
 
+# Construct the SBS gain spectrum, built from Lorentzian peaks of the individual modes.
+freq_min = 7.2  # GHz
+freq_max = 8.1  # GHz
+plotting.gain_spectra(sim_AC, SBS_gain, SBS_gain_PE, SBS_gain_MB, linewidth_Hz, k_AC,
+    EM_ival_pump, EM_ival_Stokes, AC_ival, freq_min=freq_min, freq_max=freq_max,
+    prefix_str=prefix_str, pdf_png='png')
+
 end = time.time()
 print("\n Simulation time (sec.)", (end - start))
