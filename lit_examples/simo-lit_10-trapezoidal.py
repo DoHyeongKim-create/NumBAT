@@ -26,7 +26,7 @@ from fortran import NumBAT
 start = time.time()
 
 # Geometric Parameters - all in nm.
-wl_nm = 1550 # Wavelength of EM wave in vacuum.
+wl_nm = 1560.8 # Wavelength of EM wave in vacuum.
 # Unit cell must be large to ensure fields are zero at boundary.
 unitcell_x = 12*wl_nm
 unitcell_y = 0.5*unitcell_x
@@ -92,12 +92,8 @@ print("\n n_eff = ", np.round(n_eff_sim, 4))
 k_AC = np.real(sim_EM_pump.Eig_values[EM_ival_pump] - sim_EM_Stokes.Eig_values[EM_ival_Stokes])
 print('\n AC wavenumber (1/m) = ', np.round(k_AC, 4))
 
-
-k_AC= 2.*9173922.1698
-
 # Calculate Acoustic modes.
-shift_Hz = 7.58*1e9 # select the lowest frequency to start FEM search from.
-sim_AC = wguide.calc_AC_modes(num_modes_AC, k_AC, EM_sim=sim_EM_pump, shift_Hz=shift_Hz)
+sim_AC = wguide.calc_AC_modes(num_modes_AC, k_AC, EM_sim=sim_EM_pump)
 # # np.savez('wguide_data_AC', sim_AC=sim_AC)
 # npzfile = np.load('wguide_data_AC.npz')
 # sim_AC = npzfile['sim_AC'].tolist()
@@ -108,7 +104,7 @@ plotting.plt_mode_fields(sim_AC, EM_AC='AC', prefix_str=prefix_str,
 # Print the frequencies of AC modes.
 print('\n Freq of AC modes (GHz) \n', np.round(np.real(sim_AC.Eig_values)*1e-9, 4))
 
-set_Q_factor = 190 # set the mechanic Q manually
+set_Q_factor = 1000 # set the mechanic Q manually
 
 # Calculate interaction integrals and SBS gain for PE and MB effects combined,
 # as well as just for PE, and just for MB. Also calculate acoustic loss alpha.
