@@ -26,7 +26,7 @@ from fortran import NumBAT
 start = time.time()
 
 # Geometric Parameters - all in nm.
-wl_nm = 1560.08 # Wavelength of EM wave in vacuum.
+wl_nm = 1550 # Wavelength of EM wave in vacuum.
 # Unit cell must be large to ensure fields are zero at boundary.
 unitcell_x = 12*wl_nm
 unitcell_y = 0.5*unitcell_x
@@ -96,7 +96,7 @@ print('\n AC wavenumber (1/m) = ', np.round(k_AC, 4))
 k_AC= 2.*9173922.1698
 
 # Calculate Acoustic modes.
-shift_Hz = 7.74*1e9 # select the lowest frequency to start FEM search from.
+shift_Hz = 7.58*1e9 # select the lowest frequency to start FEM search from.
 sim_AC = wguide.calc_AC_modes(num_modes_AC, k_AC, EM_sim=sim_EM_pump, shift_Hz=shift_Hz)
 # # np.savez('wguide_data_AC', sim_AC=sim_AC)
 # npzfile = np.load('wguide_data_AC.npz')
