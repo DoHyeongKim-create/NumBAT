@@ -43,7 +43,7 @@ slab_a_y = 1300
 num_modes_EM_pump = 20
 num_modes_EM_Stokes = num_modes_EM_pump
 # Number of acoustic modes to solve for.
-num_modes_AC = 80
+num_modes_AC = 50
 # The EM pump mode(s) for which to calculate interaction with AC modes.
 # Can specify a mode number (zero has lowest propagation constant) or 'All'.
 EM_ival_pump = 0
