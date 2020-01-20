@@ -14,7 +14,7 @@ import materials
 import objects
 import mode_calcs
 import integration
-import matplotlib.pyplot as plt
+import plotting
 from fortran import NumBAT
 
 # Naming conventions
@@ -113,13 +113,6 @@ print("\n SBS_gain PE contribution \n", SBS_gain_PE[EM_ival_pump,EM_ival_Stokes,
 print("SBS_gain MB contribution \n", SBS_gain_MB[EM_ival_pump,EM_ival_Stokes,:])
 print("SBS_gain total \n", SBS_gain[EM_ival_pump,EM_ival_Stokes,:])
 print("SBS_gain linewidth [Hz] \n", linewidth_Hz)
-
-plt.plot(np.round(np.real(sim_AC.Eig_values)*1e-9, SBS_gain[EM_ival_pump,EM_ival_Stokes,:], 'ro')     
-plt.title('SBS gain spectrum')
-plt.xlabel('frequency(GHz)')
-plt.ylabel('gain coefficient(1/W*m)')
-plt.show()
-end = time.time()
            
 print("\n Simulation time (sec.)", (end - start))
 
