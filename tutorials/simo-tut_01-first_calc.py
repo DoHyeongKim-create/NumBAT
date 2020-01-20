@@ -115,9 +115,7 @@ print("SBS_gain MB contribution \n", SBS_gain_MB[EM_ival_pump,EM_ival_Stokes,:])
 print("SBS_gain total \n", SBS_gain[EM_ival_pump,EM_ival_Stokes,:])
 print("SBS_gain linewidth [Hz] \n", linewidth_Hz)
 
-f=np.round(np.real(sim_AC.Eig_values)*1e-9
-s=SBS_gain[EM_ival_pump,EM_ival_Stokes,:]
-plt.plot(f, s)
+plt.plot(np.round(np.real(sim_AC.Eig_values)*1e-9, SBS_gain[EM_ival_pump,EM_ival_Stokes,:])
 plt.title('frequency vs SBS gain coefficient')
 plt.xlabel('frequency(GHz))
 plt.ylabel('SBS gain coefficient(1/W*m))        
