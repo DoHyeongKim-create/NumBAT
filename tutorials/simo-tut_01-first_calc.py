@@ -56,7 +56,7 @@ AC_ival = 'All'
 # to save the geometry and mesh as png files in backend/fortran/msh/
 wguide = objects.Struct(unitcell_x,inc_a_x,unitcell_y,inc_a_y,inc_shape,
                         material_bkg=materials.Vacuum,
-                        material_a=materials.Si_2016_Smith,
+                        material_a=materials.As2S3_2017_Morrison,
                         lc_bkg=1, # in vacuum background
                         lc2=600.0, # on cylinder surfaces
                         lc3=300.0, # on cylinder center
